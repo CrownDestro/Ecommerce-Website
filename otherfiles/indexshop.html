@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Ecommerce Website With Cart</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <!-- Box Icons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <div class="nav container">
+            <a href="Home.html" class="logo" style="color: black; font-family: 'Pacifico', cursive;">TrendSetGO</a>
+            <i class="bx bx-shopping-bag" id="cart-icon" data-quantity="0"></i>
+            <div class="cart">
+                <h2 class="cart-title">Your Cart</h2>
+                <div class="cart-content"></div>
+
+                <div class="total">
+                    <div class="total-title">Total</div>
+                    <div class="total-price">₹0</div>
+                </div>
+
+                <button type="button" class="btn-buy" onclick="window.location.href='payment form.html';">Pay Now</button>
+
+                <i class="bx bx-x" id="close-cart"></i>
+            </div>
+
+            <div class="hamburger" id="hamburger">
+                <i class="bx bx-menu"></i>
+            </div>
+            <div class="category-bar" id="category-bar">
+                <h2 style="color: black;">Categories</h2>
+                <ul style="color: antiquewhite;">
+                    <li class="category-item" data-category="all">All</li>
+                    <li class="category-item" data-category="tshirts">T-Shirts</li>
+                    <li class="category-item" data-category="shirts">Shirts</li>
+                    <li class="category-item" data-category="kurtas">kurtas</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <section class="shop container">
+        <h2 class="section-title">Men's Apparel</h2>
+        <div class="shop-content">
+            <!-- Box 1 -->
+            <div class="product-box shirts">
+                <img
+                    src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg2qItpui_4pYD6aXnKbnZtqpg3cKxRNBbOuhsZ6qfhKhXyZa2yZiqyuAv_uTGoUPv825zdkxyoVDKGl_jNXhW1Gs6wbjgJ-16rwTt0vebwtB0Gz80YNk6Arl_cWnfyG4LeS9-nW_7nUOjU14dB0mAokGu00lHRqN72MwDkx1nh-nq_eDFOdb_srtDGxlY/s320/p1.webp'
+                    alt="" 
+                    class="product-img"
+                />
+                <h2 class="product-title">LEVI'S: Crew Neck T-shirt Yellow</h2>
+                <span class="price">₹799</span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+            <!-- Box 2 -->
+            <div class="product-box shirts">
+                <img
+                    src=https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhWFlzj9rT1Efk-iowDMTi9Qaq7CUpz5oYRm8I4rprx6GVhueZUF1d4N5f_lNDpsXSdD6juE55e06J_U-bkY49yR1J6ATfAl-to8Dmbulxq6rDwOwXkbzGwue_myxWe4S9YHFcdT8eF7UqVqJwwqno0J6TOuXgnOt-BUrwJXA_xyKSQvxZhfyrrGw7yNeY/s320/p2.webp'
+                    alt="" 
+                    class="product-img"
+                />
+                <h2 class="product-title">HD: Solid Men Round Neck Grey T-shirt</h2>
+                <span class="price">₹849</span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+            <!-- Box 3 -->
+            <div class="product-box shirts">
+                <img
+                    src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhRQhEbf1GWwjHaHakD8LoUueN9o0ZO8dfC9ChbuUbc0i2jbsvisXr4rfWzuqP08qsxTY1v2w7kvIk_qec21AbpxB5ssmPzTlDwQS5SYmMLfK8Oytq0yWGq5lzIeaGbTDXlfwMaExVHUeNb7SBoaTncFWnOs0a2QgY-U441IdJea6TNzs4C9qlA_aJVy9Y/s320/p3.webp'
+                    alt="" 
+                    class="product-img"
+                />
+                <h2 class="product-title">HD: All Over Printed Slim Fit Shirt</h2>
+                <span class="price">₹1199</span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+            <!-- Box 4 -->
+            <div class="product-box shirts">
+                <img
+                    src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhh1mKs0oK1YNJ_f8p8abiHqn7cjbQ5P3vekvXYbDcoCHfFlvp81gHIMY7O32UIgw8bBcOhpfYGCmJxccyQhRhbTEoJPYAvsrLkipnM4J5li467FKbJJf0fTBL30nso_0lU1yGrajYCbgggkUambhJnVOz0MWqTE8pabRgWIWFHw6ufjr4VEZeEMAhkRgI/s320/p4.webp'
+                    alt="" 
+                    class="product-img"
+                />
+                <h2 class="product-title">PEPE: Printed Casual Blue Shirt</h2>
+                <span class="price">₹1450</span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+            <!-- Box 5 -->
+            <div class="product-box shirts">
+                <img
+                    src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiQg3y6tlB50Ppq2PHld9ytcowG-CKLvb_PvyZySAnCl7RYQd2Lw101y-rLhuT09mgu2REGfSt8ta9Lderoa4dw_D_KLut-O5CC6Glv5ddYMRlZD-xLMJzrq3c6ZMHj2hGgMMYkvUueGwBtYnM6ELrNzxa_27IIhcX4l5MuzSS3j4KQFS-BDJ4h8IOH03U/s320/p5.webp'
+                    alt="" 
+                    class="product-img"
+                />
+                <h2 class="product-title">PEPE: Dustin Yarn Dyed Reversible Double Cloth Shirt</h2>
+                <span class="price">₹1200</span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+            <!-- Box 6 -->
+            <div class="product-box shirts">
+                <img
+                    src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjeL6-893ZMlgIdspEe4c3YNShufKbmQYQuxhybzTAzB_Op0e-Zswh6oA6dIyF64PyTS690lY3rm-a5GS6lNdNAIcsCnz0fp4wxxPEU-HKZUKcBRW_qIxH0hrcjjadW1j66D1k3dbuwCZ64xjMu5-wnUlTwjCCLlJO0dhrM5JD3ulJlJCLOlzmdvVcYBW0/s320/p6.webp'
+                    alt="" 
+                    class="product-img"
+                />
+                <h2 class="product-title">PEPE: Pink T-Shirt 'EGGO' male</h2>
+                <span class="price">₹690</span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+            <!-- Box 7 -->
+            <div class="product-box shirts">
+                <img
+                    src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhVlr65UBLfIzSohM97rTO5i8585JBvoMeIQPz8Yb0bIM6E4qzGek3Sm_YYS_kb-ZzExL6OeFzX6Wra-zmvny42nVs7x3F857kHEknMV_X8ubE_dGJFKMLuddWoM9ihMewijfZaE04VHOq9oY2IYxTBW6AScflSs7qoYM3jmhH-naXrXiXNbSSvCA13BFs/s320/p7.webp'
+                    alt="" 
+                    class="product-img"
+                />
+                <h2 class="product-title">HD: Typography Men Crew Neck Black T-shirt</h2>
+                <span class="price">₹1500</span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+            <!-- Box 8 -->
+            <div class="product-box shirts">
+                <img
+                    src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhwlLTJkLcftskvuiSOnR6PsFCC3c40tc79mdWZ9_CdvFieIQ6vg_2noWODlxaJiqaNHsFLF-KS9ZTSVeFsBc0H3eMBAV1-QdRn4DRVn2Tcluj1z1yChZfpRBDkf1PNFCaK5n5BHmD2_kSljrnDqiVsKIpYhnuIhiCxF9kXR5VtRRNPGCh12i_U0fDgwbA/s320/p8.webp'
+                    alt="" 
+                    class="product-img"
+                />
+                <h2 class="product-title">LYF: Men Striped Casual Shirt</h2>
+                <span class="price">₹1050</span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+            <!-- Box 9 -->
+            <div class="product-box shirts">
+                <img
+                    src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj1JMZV106igNYMHbMmk1X3cYhLeqT-Olba9KwJTs55LaTFJCcfwWpPUnEmZ6MNSS5Mq2QjCnTocQfdFWDoRCVhR64BleEOIU12Qt8QHxnJs3n52y_JV5NWGTwDlbqzUCdlESuPdU7fE56mtyzKidOa76cBK10_7FSECZJCkDoOpLNnqNf_2F9LD9ACBSo/s320/p9.webp'
+                    alt="" 
+                    class="product-img"
+                />
+                <h2 class="product-title">HD: Striped Cotton Regular Fit Polo T-shirt</h2>
+                <span class="price">₹1350</span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+            <!-- Box 10 -->
+            <div class="product-box shirts">
+                <img
+                    src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_tVteB44b48X46NS4qmxH8tlTGvN3AacGM8VvNn406rUDaIjyGLrPT-GeilSyplDMW4JJURMTeBDp063U-7nVj4nGL4Cwkt1LMOGUAy6aoF_I-F_VvdSsLd0OVUTqoE8Hq1V2fVxDElcIVDU80OwoIqG6Fq7fjq48_d8YdMLwPN2LoodPpSNQpH7dias/s320/p10.webp'
+                    alt="" 
+                    class="product-img"
+                />
+                <h2 class="product-title">RARE RABBIT: Planto Purple Half Sleeves Floral Print</h2>
+                <span class="price">₹1900</span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+            <!-- Box 11 -->
+            <div class="product-box shirts">
+                <img
+                    src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhu5j8I0ktWMjNCh8PuC608876t8AFNsFngXIcW72rDkiLvH0ATK4Ut6O4dRpY9iWiVFfeEODBqMbc2Mn-TUBjVawmmh61LHZwZZMnm-TU2RI4qIj-LHRW9Kw8sr_nVKYln_hC86ChBG6ncvnbexLfBu4logo3l-N385MAAeRsmrk8vqLaiqE3irVevwaQ/s320/p11.webp'
+                    alt="" 
+                    class="product-img"
+                />
+                <h2 class="product-title">RARE RABBIT: Misa Grey Full Sleeves Floral Print Cotton</h2>
+                <span class="price">₹1500</span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+            <!-- Box 12 -->
+            <div class="product-box shirts">
+                <img
+                    src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjaymGBScfpEOM7PrZFFTulSgIMWGFV7O4vwxkg9dcdU7ZJgIaGGVvsEHlU86_GQuXndAq5jrObzpGLaRSL-O8pK5NICdt7PDl9hWLaHOXYLUhz5De5guE9bGr2P8r1LqjRfOkahXZeJO82KoIySxQH71tTwX3-cE6c-nnmf9WAtadUUyLuVK5BADIzbgQ/s320/p12.jpg'
+                    alt="" 
+                    class="product-img"
+                />
+                <h2 class="product-title">LINEN: Solid Cotton Blend Straight Kurta</h2>
+                <span class="price">₹1100</span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+        </div>
+    </section>
+    <script src="main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const categoryBar = document.getElementById('category-bar');
+    const categoryItems = document.querySelectorAll('.category-item');
+    const productBoxes = document.querySelectorAll('.product-box');
+
+    // Filtering
+    function filterProducts(category) {
+        productBoxes.forEach(box => {
+            const isTshirt = box.querySelector('.product-title').textContent.toLowerCase().includes('t-shirt');
+            if (category === 'all' || (category === 'tshirts' && isTshirt) || (category === 'shirts' && !isTshirt)) {
+                box.style.display = 'block';
+            } else {
+                box.style.display = 'none';
+            }
+        });
+    }
+    categoryItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const selectedCategory = this.getAttribute('data-category');
+            filterProducts(selectedCategory);
+            });
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const categoryBar = document.getElementById('category-bar');
+        const hamburger = document.getElementById('hamburger');
+
+        hamburger.addEventListener('click', function() {
+            if (categoryBar.style.display === 'none') {
+                categoryBar.style.display = 'block';
+            } else {
+                categoryBar.style.display = 'none';
+            }
+        });
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Payment Method</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: azure;
+            font-family: Arial, sans-serif;
+            font-size: 18px; 
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            text-align: center;
+        }
+        input {
+            margin-left: 140px;  
+        }
+        input[type="radio"] {
+            transform: scale(1.5); 
+            margin-right: 10px;
+        }
+        .payment-option img {
+            width: 50px;
+            height: 50px;
+        }
+        img {
+            max-width: max-content;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 32px; 
+        }
+        .payment-option {
+            margin-bottom: 50px;
+            text-align: left;
+            padding: 10px; 
+            border-radius: 5px; 
+            transition: background-color 0.3s, box-shadow 0.3s; 
+        }
+        .payment-option label {
+            margin-left: 30px;
+            font-size: 22px; }
+
+        .payment-option.selected {
+            background-color: #e0f7fa; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+        }
+        .payment-option:hover {
+            background-color: #e0f7fa; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 30px; 
+            border-radius: 5px;
+            font-size: 20px; 
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Choose Payment Method</h1>
+        <form id="payment-form">
+            <div class="payment-option" data-radio-id="gpay">
+                <input type="radio" id="gpay" name="payment" value="gpay">
+                <label for="gpay">
+                    <img src="gpayy.png" alt="GPay Icon"> Google Pay
+                </label>
+            </div>
+            <div class="payment-option" data-radio-id="phonepe">
+                <input type="radio" id="phonepe" name="payment" value="phonepe">
+                <label for="phonepe">
+                    <img src="php.png" alt="PhonePe Icon"> PhonePe
+                </label>
+            </div>
+            <div class="payment-option" data-radio-id="credit-card">
+                <input type="radio" id="credit-card" name="payment" value="credit-card">
+                <label for="credit-card">
+                    <img src="vi.png" alt="Credit Card Icon"> Credit Card
+                </label>
+            </div>
+            <div class="payment-option" data-radio-id="cod">
+                <input type="radio" id="cod" name="payment" value="cod">
+                <label for="cod">
+                    <img src="cod.png" alt="Cash on Delivery Icon"> Cash on Delivery
+                </label>
+            </div>
+            <button type="submit">Continue</button>
+        </form>
+    </div>
+
+    <script>
+        document.querySelectorAll('input[type="radio"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                document.querySelectorAll('.payment-option').forEach(option => {
+                    option.classList.remove('selected');
+                });
+                this.closest('.payment-option').classList.add('selected');
+            });
+        });
+
+        document.getElementById('payment-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const paymentMethod = document.querySelector('input[name="payment"]:checked').value;
+            if (paymentMethod === 'credit-card') {
+                window.location.href = 'payment form.html';
+            } else {
+                alert('You selected: ' + paymentMethod);
+            }
+        });
+    </script>
+</body>
+</html>
+
+

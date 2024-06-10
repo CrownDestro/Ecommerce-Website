@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Sign Up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style2.css">
+
+    
+</head>
+
+
+<body>
+
+    <nav>
+        <h1>TrendSetGO</h1>
+    
+        <br><hr>
+        <div class="nav-links">
+           
+            <a href="Home.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="About.html">Blog</a>
+            <a href="Contactus.html">Contact</a>
+            
+        </div>
+    </nav>
+    <div class="marq">
+        <marquee>New Offers Available!! Exciting Deals</marquee>
+    </div>
+
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form id="signUpForm">
+                <h1>Create Account</h1>
+                
+                <input type="text" placeholder="Name" id="signUpName" required>
+                <input type="email" placeholder="Email" id="signUpEmail" required>
+                <input type="password" placeholder="Password" id="signUpPassword" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in">
+            <form id="signInForm">
+                <h1>Sign In</h1>
+               
+                <input type="email" placeholder="Email" id="signInEmail" required>
+                <input type="password" placeholder="Password" id="signInPassword" required>
+                <button type="submit">Sign In</button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1 style="color:black">Welcome Back!</h1><br><br>
+                    <button class="hidden" id="login">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1 style="color: black;">Hello Friend!</h1><br><br>
+                    <button class="hidden" id="register">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    
+    <div id="mypopup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h2 id="popupTitle"></h2>
+            <p id="popupMessage"></p>
+        </div>
+    </div>
+
+    <script>
+        
+        const container = document.getElementById('container');
+        const registerBtn = document.getElementById('register');
+        const loginBtn = document.getElementById('login');
+
+        registerBtn.addEventListener('click', () => {
+            container.classList.add("active");
+        });
+
+        loginBtn.addEventListener('click', () => {
+            container.classList.remove("active");
+        });
+
+
+
+
+        const signUpForm = document.getElementById('signUpForm');
+        const signInForm = document.getElementById('signInForm');
+
+        const popup = document.getElementById("mypopup");
+        const popupTitle = document.getElementById("popupTitle");
+        const popupMessage = document.getElementById("popupMessage");
+        const closepopup = document.getElementsByClassName("close")[0];
+
+        closepopup.onclick = function() {
+            popup.style.display = "none";
+        }
+
+        
+
+        function showPopup(title, message) {
+            popupTitle.innerText = title;
+            popupMessage.innerText = message;
+            popup.style.display = "block";
+        }
+
+        signUpForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('signUpName').value;
+            const email = document.getElementById('signUpEmail').value;
+            const password = document.getElementById('signUpPassword').value;
+
+            const users = JSON.parse(localStorage.getItem('users')) || {};
+            if (users[email]) {
+                showPopup('Error', 'Email already exists.');
+            } else {
+                users[email] = { name, password };
+                localStorage.setItem('users', JSON.stringify(users));
+                showPopup('Success', 'Account created successfully.');
+                container.classList.remove("active");
+            }
+        });
+
+        signInForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = document.getElementById('signInEmail').value;
+            const password = document.getElementById('signInPassword').value;
+
+            const users = JSON.parse(localStorage.getItem('users')) || {};
+            if (users[email] && users[email].password === password) {
+                showPopup('Success', 'Login successful.');
+            } else {
+                showPopup('Error', 'Incorrect email or password.');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the store</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: black;
+            overflow-x: hidden; 
+        }
+
+        header {
+            background-color: #9bd0d6;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            padding: 10px 15px;
+            font-size: 18px;
+        }
+
+        nav ul li a:hover {
+            color: #ffc107;
+            transform: scale(1.1) translateY(-23px);
+            font-weight: bold;
+        }
+
+       
+
+        .main-content {
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .dress-container {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-around;
+            margin-top: 20px;
+            width: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .dress-box {
+            min-width: 30%;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .dress-box:hover {
+            transform: translateY(-35px);
+            box-shadow: 0 6px 10px rgba(0,0,0,0.2);
+        }
+
+        .dress-img {
+            width: 100%;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .dress-details {
+            padding: 20px;
+        }
+
+        .dress-name {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .dress-price {
+            color: #555;
+            font-size: 18px;
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+        }
+
+        #navtext {
+            font-family: 'Montserrat', sans-serif;
+            font-size: medium;
+            color: black;
+        }
+
+        marquee {
+            font-size: 20px;
+            color: black;
+            background-color: white;
+            padding: top 30px;
+        }
+
+        footer img {
+            width: px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        .info-section p {
+            margin: 0;
+        }
+
+        .info-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .info-icon {
+            margin: 0 8px;
+        }
+
+        .info-icon img {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 5px;
+            margin-left: 30px;
+        }
+
+        #cart-icon {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            background-color: #9bd0d6;
+            padding: 5px;
+            border-radius: 50%;
+        }
+
+        #cart-icon:hover {
+            transform: scale(1.2);
+        }
+
+        .nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2em;
+            cursor: pointer;
+            background-color: #9bd0d6;
+            padding: 10px;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-arrow:hover {
+            background-color: #555;
+            color: white;
+        }
+
+        .nav-arrow.left {
+            left: 10px;
+        }
+
+        .nav-arrow.right {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>TrendSetGO</h1>
+        <img src="images/cart.png" alt="Cart" onclick="window.location.href='shop.html'" id="cart-icon">
+        <h3 id="navtext"></h3>
+        <nav>
+            <ul>
+                
+                <li><a href="/shop.html">Shop</a></li>
+                <li><a href="/About.html">Blog</a></li>
+                <li><a href="/Contactus.html">Contact</a></li>
+                <li><a href="/login.html">Register/Login</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+    <br>
+    <div class="info-section" style="text-align: center;">
+        <div class="info-icons">
+            <div class="info-icon">
+                <img src="images/service-icon-1.svg" alt="Free Delivery">
+                <p>Free Shipping</p>
+            </div>
+            <div class="info-icon">
+                <img src="images/service-icon-2.svg" alt="Instant Return">
+                <p>Instant Returns</p>
+            </div>
+            <div class="info-icon">
+                <img src="images/service-icon-3.svg" alt="Trustable Product">
+                <p>Trustable Products</p>
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
+        <h2>Hot Arrivals</h2>
+        <p>Discover the latest trends in fashion with the greatest offers.</p>
+      
+                <div class="dress-container" id="dressContainer">
+            <div class="dress-box">
+                <img class="dress-img" src="images/product-2.jpg" alt="Dress 1" onclick="window.location.href='shop.html'">
+                <div class="dress-details">
+                    <h3 class="dress-name">Summer Maxi Dress</h3>
+                    <p class="dress-price">₹1299</p>
+                </div>
+            </div>
+            <div class="dress-box">
+                <img class="dress-img" src="images/product-8.jpg" alt="Dress 2" onclick="window.location.href='shop.html'">
+                <div class="dress-details">
+                    <h3 class="dress-name">Cocktail Party Dress</h3>
+                    <p class="dress-price">₹999</p>
+                </div>
+            </div>
+            <div class="dress-box">
+                <img class="dress-img" src="images/product-4.jpg" alt="Dress 3" onclick="window.location.href='shop.html'">
+                <div class="dress-details">
+                    <h3 class="dress-name">Formal Evening Casuals</h3>
+                    <p class="dress-price">₹1999</p>
+                </div>
+            </div>
+        </div>
+        <div class="nav-arrow left" onclick="scrollLeft()">&#9664;</div>
+        <div class="nav-arrow right" onclick="scrollRight()">&#9654;</div>
+    </div>
+    <marquee>Welcome to the summer sale!! Grab 3 shirts and get 1 free. Enjoy 50% off on all brands.</marquee>
+    <br><br><br>
+    <footer style="padding-block: 2px;">
+        © 2024 TrendSetGO Store. All rights reserved. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; We accept &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="images/payment-img.png" alt="Accepted Payment Methods">
+    </footer>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+</body>
+<script>
+    window.onload = function() {
+        var headerText = document.getElementById('navtext');
+        var slogans = ["Discover the Latest Trends!", "Great Offers Await You!", "Find Your Style Today!"];
+        var index = 0;
+
+        function rotateHeaderText() {
+            headerText.textContent = slogans[index];
+            index = (index + 1) % slogans.length;
+        }
+
+        setInterval(rotateHeaderText, 3000);
+
+        // Entrance Animation
+        const dressBoxes = document.querySelectorAll('.dress-box');
+        dressBoxes.forEach((box, index) => {
+            setTimeout(() => {
+                box.classList.add('visible');
+            }, index * 300);
+        });
+    };
+
+    const container = document.getElementById('dressContainer');
+
+    function scrollRight() {
+        const dressBoxes = document.querySelectorAll('.dress-box');
+        const firstBox = dressBoxes[0];
+        container.appendChild(firstBox.cloneNode(true));
+        container.removeChild(firstBox);
+    }
+
+    function scrollLeft() {
+        const dressBoxes = document.querySelectorAll('.dress-box');
+        const lastBox = dressBoxes[dressBoxes.length - 1];
+        container.insertBefore(lastBox.cloneNode(true), container.firstChild);
+        container.removeChild(lastBox);
+    }
+</script>
+</html>

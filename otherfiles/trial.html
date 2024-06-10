@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation Example</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="icons-left">
+            <img src="logo.png" id="logo" alt="Logo">
+        </div>
+    </div>
+    <div class="container">
+        <form id="billingForm">
+            <div class="row">
+                <div class="col">
+                    <h3 class="title">Billing Address</h3>
+                    <div class="inputBox">
+                        <span>Full Name :</span>
+                        <input type="text" name="nam" placeholder="Name" required>
+                    </div>
+                    <div class="inputBox">
+                        <span>Email :</span>
+                        <input type="email" name="mail" placeholder="example@example.com" required>
+                    </div>
+                    <div class="inputBox">
+                        <span>Address :</span>
+                        <input type="text" name="add" placeholder="Address" required>
+                    </div>
+                    <div class="inputBox">
+                        <span>City :</span>
+                        <input type="text" name="city" placeholder="Mumbai" required>
+                    </div>
+                    <div class="flex">
+                        <div class="inputBox">
+                            <span>State :</span>
+                            <input type="text" name="state" placeholder="India" required>
+                        </div>
+                        <div class="inputBox">
+                            <span>Zip Code :</span>
+                            <input type="text" name="zip" placeholder="400706" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <h3 class="title">Payment</h3>
+                    <div class="inputBox">
+                        <span>Cards Accepted :</span>
+                        <img src="card_img.png" alt="PaymentMethod">
+                    </div>
+                    <div class="inputBox">
+                        <span>Name on Card :</span>
+                        <input type="text" name="cardnam" placeholder="Name" required>
+                    </div>
+                    <div class="inputBox">
+                        <span>Credit Card Number :</span>
+                        <input type="number" name="cardnum" required>
+                    </div>
+                    <div class="inputBox">
+                        <span>Exp Month :</span>
+                        <input type="text" name="expm" placeholder="January" required>
+                    </div>
+                    <div class="flex">
+                        <div class="inputBox">
+                            <span>Exp Year :</span>
+                            <input type="number" name="expy" placeholder="2028" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button onclick="validateForm()">CONFIRM</button>
+        </form>
+    </div>
+    <script>
+
+        function validateForm() {
+            event.preventDefault();
+            console.log("asdasd");
+            var name = document.getElementsByName("nam")[0].value;
+            var mail = document.getElementsByName("mail")[0].value;
+            var address = document.getElementsByName("add")[0].value;
+            var city = document.getElementsByName("city")[0].value;
+            var state = document.getElementsByName("state")[0].value;
+            var zcode = document.getElementsByName("zip")[0].value;
+            var cardnam = document.getElementsByName("cardnam")[0].value;
+            var cardnum = document.getElementsByName("cardnum")[0].value;
+            var expm = document.getElementsByName("expm")[0].value;
+            var expy = document.getElementsByName("expy")[0].value;
+
+            if (name === '' || mail === '' || address === '' || city === '' || state === '' || zcode === '' || cardnam === '' || cardnum === '' || expm === '' || expy === '') {
+                alert("All fields are required");
+                return false;
+            }
+            // Redirect to success.html
+            console.log("Redirecting to success.html...");
+            window.location.href = "success.html";
+        }
+    </script>
+</body>
+</html> 
